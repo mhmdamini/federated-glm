@@ -12,10 +12,10 @@ def read_requirements():
 
 setup(
     name="federated-glm",
-    version="0.1.0",
+    version="0.2.0",
     author="Mohammad Amini",
     author_email="m.amini@ufl.edu",
-    description="A library for federated learning with Generalized Linear Models",
+    description="A library for federated learning and personalized federated learning with Generalized Linear Models",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/mhmdamini/federated-glm",
