@@ -1,0 +1,14 @@
+LICENSE
+setup.py
+federated_glm/__init__.py
+federated_glm/core.py
+federated_glm/evaluation.py
+federated_glm/federation.py
+federated_glm/utils.py
+federated_glm.egg-info/PKG-INFO
+federated_glm.egg-info/SOURCES.txt
+federated_glm.egg-info/dependency_links.txt
+federated_glm.egg-info/not-zip-safe
+federated_glm.egg-info/requires.txt
+federated_glm.egg-info/top_level.txt
+tests/test_basic.py
