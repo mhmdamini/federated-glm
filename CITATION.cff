@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Federated GLM: A Python Library for Federated Learning with Generalized Linear Models"
+version: 0.1.0
+doi: 10.5281/zenodo.XXXXX  # Replace with your actual Zenodo DOI
+date-released: 2025-07-13
+url: "https://github.com/mhmdamini/federated-glm"
+repository-code: "https://github.com/mhmdamini/federated-glm"
+license: MIT
+authors:
+  - family-names: "Amini"
+    given-names: "Mohammad"
+    orcid: "https://orcid.org/0000-0002-3729-7165"
+    affiliation: "University of Florida"
+keywords:
+  - federated-learning
+  - generalized-linear-models
+  - machine-learning
+  - statistics
+  - distributed-systems
