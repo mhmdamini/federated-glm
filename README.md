@@ -41,7 +41,7 @@ pip install "federated-glm[examples]"
 Here’s a minimal example using Gaussian regression:
 
 ```python
-from federated_glm import FederatedLearningManager, DataGenerator, ModelEvaluator
+from federated_glm import PersonalizedFederatedGLM, FederatedLearningManager, DataGenerator, ModelEvaluator
 
 # Generate synthetic data
 X, y, family = DataGenerator.generate_glm_data("gaussian", n=200, p=3)
@@ -63,7 +63,16 @@ metrics = ModelEvaluator.evaluate(y_test, y_pred, "gaussian")
 
 print("R² Score:", metrics["r2_score"])
 print("RMSE:", metrics["rmse"])
+
 ```
+
+For personalized federated learning, it will be:
+
+```python
+pfed = PersonalizedFederatedGLM(method='pfedme')
+pfed.fit(client_data, family, n_rounds=20)
+```
+Where method can be 'pfedme', 'perfedavg', and 'local_adaptation'.
 
 ---
 
@@ -77,8 +86,11 @@ federated-glm/
 │   ├── evaluation.py          # Model evaluation metrics
 │   ├── utils.py               # Data generation & partitioning utilities
 │   └── __init__.py
+│   └── personalized.py.       # personalized federated learning
 ├── examples/                  # Usage examples
 │   └── basic_example.py
+│   └── simple_example.py
+│   └── personalized_example.py
 ├── tests/                     # Unit and integration tests
 │   └── test_basic.py
 ├── requirements.txt
@@ -99,7 +111,7 @@ python examples/basic_example.py
 
 This includes:
 
-* Federated vs centralized performance comparison
+* Federated and personalized federated learning vs centralized performance comparison
 * Convergence visualization
 * Comparison of regularization strategies (ordinary, lasso, elastic net)
 
