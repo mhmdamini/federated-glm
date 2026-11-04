@@ -1,4 +1,3 @@
-````markdown
 # Federated GLM
 
 [![PyPI - Version](https://img.shields.io/pypi/v/federated-glm.svg)](https://pypi.org/project/federated-glm/)
@@ -25,7 +24,7 @@
 
 ```bash
 pip install git+https://github.com/mhmdamini/federated-glm.git
-````
+```
 
 To install with development or example dependencies:
 
