@@ -26,7 +26,7 @@ def read_requirements():
 
 setup(
     name="federated-glm",
-    version="0.2.0",
+    version="0.3.0",
     author="Mohammad Amini",
     author_email="m.amini@ufl.edu",
     description="A library for federated learning and personalized federated learning with Generalized Linear Models",
@@ -35,7 +35,7 @@ setup(
     url="https://github.com/mhmdamini/federated-glm",
     packages=find_packages(),
     classifiers=[
-        "Development Status :: 4 - Beta",  # Changed from Alpha to Beta
+        "Development Status :: 4 - Beta",
         "Intended Audience :: Science/Research",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
@@ -44,6 +44,8 @@ setup(
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
         "Topic :: Scientific/Engineering :: Artificial Intelligence",
         "Topic :: Scientific/Engineering :: Mathematics",
     ],

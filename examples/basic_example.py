@@ -180,12 +180,10 @@ def compare_regularization_methods():
     print("REGULARIZATION METHODS COMPARISON")
     print("=" * 60)
     
-    # Generate data with some noise
-    X, y, family = DataGenerator.generate_glm_data("gaussian", n=300, p=6, seed=456)
-    client_data = DataGenerator.partition_data(X, y, n_clients=3, seed=456)
-    
-    # Test data
-    X_test, y_test, _ = DataGenerator.generate_glm_data("gaussian", n=100, p=6, seed=789)
+    # Generate data with some noise; train and test come from the same model
+    X, y, family = DataGenerator.generate_glm_data("gaussian", n=400, p=6, seed=456)
+    X_test, y_test = X[300:], y[300:]
+    client_data = DataGenerator.partition_data(X[:300], y[:300], n_clients=3, seed=456)
     
     methods = ["ordinary", "lasso", "elastic_net"]
     

@@ -1,8 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 title: "Federated GLM: A Python Library for Federated Learning with Generalized Linear Models"
-version: 0.1.0
-doi: 10.5281/zenodo.XXXXX  # Replace with your actual Zenodo DOI
+version: 0.3.0
 date-released: 2025-07-13
 url: "https://github.com/mhmdamini/federated-glm"
 repository-code: "https://github.com/mhmdamini/federated-glm"

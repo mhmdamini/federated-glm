@@ -1,5 +1,6 @@
 # federated_glm/evaluation.py
 import numpy as np
+from scipy.special import xlogy
 from sklearn.metrics import r2_score, mean_squared_error, accuracy_score, log_loss
 from typing import Dict, Any
 
@@ -52,9 +53,10 @@ class ModelEvaluator:
     
     @staticmethod
     def _poisson_deviance(y_true, y_pred):
-        """Compute Poisson deviance"""
-        y_pred = np.clip(y_pred, 1e-10, None)  # Avoid log(0)
-        return 2 * np.sum(y_true * np.log(y_true / y_pred) - (y_true - y_pred))
+        """Poisson deviance, using 0 * log(0) = 0 for zero counts"""
+        y_true = np.asarray(y_true, dtype=float)
+        y_pred = np.clip(np.asarray(y_pred, dtype=float), 1e-10, None)  # Avoid log(0)
+        return 2 * np.sum(xlogy(y_true, y_true / y_pred) - (y_true - y_pred))
     
     @staticmethod
     def compare_methods(results: Dict[str, Dict]) -> Dict:
@@ -64,9 +66,9 @@ class ModelEvaluator:
         for metric in ['r2_score', 'mse', 'accuracy']:
             if metric in next(iter(results.values())):
                 comparison[metric] = {
-                    method: results[method][metric] 
-                    for method in results 
-                    if results[method][metric] is not None
+                    method: results[method][metric]
+                    for method in results
+                    if results[method].get(metric) is not None
                 }
         
         return comparison
