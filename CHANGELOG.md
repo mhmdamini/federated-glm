@@ -37,3 +37,4 @@
   instead of silently using the global model.
 - An invalid `aggregation_method` raises when the manager is created.
 - `max_steps` is deprecated and ignored; use `maxiter`.
+- Requires Python 3.10 or newer (tested on 3.10, 3.12 and 3.13).
